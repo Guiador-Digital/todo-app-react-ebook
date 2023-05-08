@@ -1,0 +1,40 @@
+.TaskList ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: Arial, sans-serif;
+}
+
+.TaskList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.TaskList input[type="checkbox"] {
+  margin-right: 8px;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #9f7aea;
+}
+
+.TaskList input[type="checkbox"]:checked {
+  background-color: #9f7aea;
+}
+
+.TaskList label {
+  color: #4b5563;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.TaskList {
+  color: #4b5563;
+  background-color: #ffffff;
+  border: 1px solid #f3e8ff;
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+  margin: auto;
+  width: 500px;
+}
