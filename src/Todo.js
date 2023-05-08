@@ -1,25 +1,9 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import TaskList from './TaskList'
+import { TasksContext } from './contexts/TaskListContext'
 
 function Todo() {
-    const [tasks, setTasks] = useState([
-        {
-            name: 'Task 1',
-            done: false
-        },
-        {
-            name: 'Task 2',
-            done: false
-        },
-        {
-            name: 'Task 3',
-            done: false
-        },
-        {
-            name: 'Task 4',
-            done: false
-        },
-    ])
+    const { tasks, setTasks } = useContext(TasksContext)
 
     const tasksPendentes = tasks.filter(task => task.done === false)
     const tasksConcluidas = tasks.filter(task => task.done === true)
@@ -43,12 +27,12 @@ function Todo() {
             <h2>Tasks pendentes {
                 tasksPendentes.length > 0 && <span> ({tasksPendentes.length})</span>
             }</h2>
-            <TaskList tasks={tasksPendentes} change={handleToggleDone} />
+            <TaskList type="pending" />
 
             <h2>Tasks Concluídas {
                 tasksConcluidas.length > 0 && <span> ({tasksConcluidas.length})</span>
             }</h2>
-            <TaskList tasks={tasksConcluidas} change={handleToggleDone} />
+            <TaskList type="done" />
         </>
     )
 }
