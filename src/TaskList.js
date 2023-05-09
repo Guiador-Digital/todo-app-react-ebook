@@ -21,16 +21,12 @@ function TaskList({ type }) {
             break;
     }
 
-    const onChange = () => {
-
-    }
-
 
     return (<div className="TaskList">
         <ul>
             {
                 tasks.map(task => {
-                    return <TaskItem taskName={task.name} taskDone={task.done} change={onChange} key={task.name} />
+                    return <TaskItem taskName={task.name} taskDone={task.done} key={task.name} />
                 })
 
             }
